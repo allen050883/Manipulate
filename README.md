@@ -7,8 +7,8 @@ docker load -i python3-tensorflow-gpu.tar
 ## Renew docker tag:(just type container ID former least 4 words)  
 docker tag acbf allen/python3-tensorflow-gpu
 ## For someone using, create a file and load nvidia-docker  
-mkdir ExtStorage  
-sudo nvidia-docker run -it -v /home/allen/ExtStorage:/workspace markliou/python3-tensorflow-gpu bash  
+1. mkdir ExtStorage  
+2. sudo nvidia-docker run -it -v /home/allen/ExtStorage:/workspace markliou/python3-tensorflow-gpu bash  
  ---  
 ## Search which container running  
 docker ps  
