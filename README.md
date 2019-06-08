@@ -15,5 +15,20 @@ docker tag acbf allen/python3-tensorflow-gpu
 docker ps  
 ### All dockers inculding open, close and dead  
 docker ps -a  
+  
+  
+  
+---  
+# Screen
+##In terminal, type 'screen' to open. It is useful when leaving the ssh mode.  
+##command line:  
+1. enter screen (Deatched mode): screen -r PID  
+2. enter screen (Attached mode): screen -D -r PID  
+3. watch existing screen: screen -ls  
+4. delete screen: kill PID  
+  
+#command line in screen  
+5. deatched screen: ctrl + A ^ D (press 'ctrl' and 'A' in the same time, and then press 'D')  
+6. see previous content: ( ctrl + A ^ [ ) then ( ctrl + B )(back) or ( ctrl + F )(forward)  
 
 
