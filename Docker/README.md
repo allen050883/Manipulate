@@ -9,8 +9,9 @@ docker tag acbf allen/python3-tensorflow-gpu
 ### For someone using, create a file and load nvidia-docker(do not make the file in root state)  
 1. mkdir ExtStorage  
 2. sudo nvidia-docker run -it -v /media/allen/:/workspace markliou/python3-tensorflow-gpu bash  
-(nvidia-docker run -it -v /media/allen:/workspace -v /media/dataset/ markliou/python3-tensorflow-gpu bash)
-(sudo docker run -it --gpus all --rm -e DISPLAY=$DISPLAY -v $HOME/.Xauthority:/root/.Xauthority -v /media/allen:/workspace --network=host --name=VAETEST  markliou/python3-tensorflow-gpu bash)
+(nvidia-docker run -it -v /media/allen:/workspace -v /media/dataset/ markliou/python3-tensorflow-gpu bash)  
+(sudo docker run -it --gpus all --rm -e DISPLAY=$DISPLAY -v $HOME/.Xauthority:/root/.Xauthority -v /media/allen:/workspace --network=host --name=VAETEST  markliou/python3-tensorflow-gpu bash)  
+  
  ---  
 ### Search which container running  
 docker ps  
