@@ -10,3 +10,16 @@ sudo nvidia-smi -cc 1 -i 1    #make GPU to P0
 sudo apt-get install imagemagick  
 convert -delay 20 -loop 0 *.jpg myimage.gif  
   
+# if add new HDD and move /home in there  
+mkfs.ext4 /dev/sda  
+sudo blkid --> find the UUID on the new HDD  
+sudo nano /etc/fstab --> add in fstab  
+sudo mkdir /media/home  
+sudo mount -a  
+sudo rsync -aXS /home/. /media/home/.  
+cd /  
+sudo mv /home /home_backup  
+sudo mkdir /home  
+sudo nano /etc/fstab --> change mount from /media/home to /home  
+sudo mount -a  
+sudo rm -rf /home_backup  
