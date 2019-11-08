@@ -10,7 +10,7 @@ sudo nvidia-smi -cc 1 -i 1    #make GPU to P0
 sudo apt-get install imagemagick  
 convert -delay 20 -loop 0 *.jpg myimage.gif  
   
-# if add new HDD and move /home in there  
+# add new HDD and move /home in there  
 mkfs.ext4 /dev/sda  
 sudo blkid --> find the UUID on the new HDD  
 sudo nano /etc/fstab --> add in fstab  
