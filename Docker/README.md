@@ -2,7 +2,7 @@
 
 ### Save docker image:  
 docker save -o b5d632d87a03.tar b5d632d87a03  
-### Laod docker image:  
+### Load docker image:  
 docker load -i python3-tensorflow-gpu.tar  
 ### Renew docker tag:(just type container ID former least 4 words)  
 docker tag acbf allen/python3-tensorflow-gpu
@@ -15,7 +15,7 @@ docker tag acbf allen/python3-tensorflow-gpu
  ---  
 ### Search which container running  
 docker ps  
-### All dockers inculding open, close and dead  
+### All dockers including open, close and dead  
 docker ps -a  
   
   
