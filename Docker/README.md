@@ -13,12 +13,13 @@ docker tag acbf allen/python3-tensorflow-gpu
 (sudo docker run -it --gpus all --rm -e DISPLAY=$DISPLAY -v $HOME/.Xauthority:/root/.Xauthority -v /media/allen:/workspace --network=host --name=VAETEST  markliou/python3-tensorflow-gpu bash)  
   
  ---  
-### Search which container running  
-docker ps  
-### All dockers including open, close and dead  
-docker ps -a  
+docker tag local-image:tagname new-repo:tagname  
+docker push new-repo:tagname  
+docker ps     #Search which container running  
+docker ps -a  #All dockers including open, close and dead  
+ 
   
-  
+
   
 ---  
 # Screen
