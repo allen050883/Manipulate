@@ -19,6 +19,9 @@ sudo docker rm xxxx #remove container
 ### image state
 sudo docker images
 sudo docker rmi xxxx #remove image
+
+### run the same docker
+docker exec -it [container_name] /bin/bash
   
  
  
