@@ -17,7 +17,7 @@ convert -delay 20 -loop 0 *.jpg myimage.gif
 ```bat
 mkfs.ext4 /dev/sda  
   
-# find the UUID on the new HDD  
+# see the UUID on the new HDD  
 sudo blkid                              
 sudo nano /etc/fstab # add in fstab  
 sudo mkdir /media/home  
@@ -27,7 +27,7 @@ cd /
 sudo mv /home /home_backup  
 sudo mkdir /home  
   
-# change mount from /media/home to /home  
+# modify mount from /media/home to /home  
 sudo nano /etc/fstab                     
 sudo mount -a  
 sudo rm -rf /home_backup  
@@ -38,5 +38,5 @@ sudo rm -rf /home_backup
 mkdir -p ~/.ssh  
 chmod 700 ~/.ssh  
 ssh-keygen                             # generate public key and private key
-ssh-copy-id USER@HOST                  # copy ssh to host pc
+ssh-copy-id USER@HOST                  # send ssh-key to host pc
 ```
