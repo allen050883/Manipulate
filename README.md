@@ -27,7 +27,7 @@ cd /
 sudo mv /home /home_backup  
 sudo mkdir /home  
   
-# modify mount from /media/home to /home  
+# modify mounting from /media/home to /home  
 sudo nano /etc/fstab                     
 sudo mount -a  
 sudo rm -rf /home_backup  
