@@ -16,15 +16,15 @@ convert -delay 20 -loop 0 *.jpg myimage.gif
 ## add new HDD and move /home in there  
 ```bat
 mkfs.ext4 /dev/sda  
-sudo blkid --> find the UUID on the new HDD  
-sudo nano /etc/fstab --> add in fstab  
+sudo blkid # find the UUID on the new HDD  
+sudo nano /etc/fstab # add in fstab  
 sudo mkdir /media/home  
 sudo mount -a  
 sudo rsync -aXS /home/. /media/home/.  
 cd /  
 sudo mv /home /home_backup  
 sudo mkdir /home  
-sudo nano /etc/fstab --> change mount from /media/home to /home  
+sudo nano /etc/fstab # change mount from /media/home to /home  
 sudo mount -a  
 sudo rm -rf /home_backup  
 ```  
