@@ -38,5 +38,5 @@ sudo rm -rf /home_backup
 mkdir -p ~/.ssh  
 chmod 700 ~/.ssh  
 ssh-keygen                             # generate public key and private key
-ssh-copy-id USER@HOST                  # send ssh-key to host pc
+ssh-copy-id user@host_ip                  # send ssh-key to host pc
 ```
