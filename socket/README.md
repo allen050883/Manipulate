@@ -1,3 +1,40 @@
+# php socket
+```php
+<?php
+//php server
+$host = "127.0.0.1";
+$port = 25003;
+set_time_limit(0);
+$socket = socket_create(AF_INET, SOCK_STREAM, 0) or die("Could not create socket\n");
+$result = socket_bind($socket, $host, $port) or die("Could not bind to socket\n");
+$result = socket_listen($socket, 3) or die("Could not set up socket listener\n");
+$spawn = socket_accept($socket) or die("Could not accept incoming connection\n");
+$input = socket_read($spawn, 1024) or die("Could not read input\n");
+$input = trim($input);
+echo "Client Message: ".$input;
+$output = $input;
+socket_write($spawn, $output, strlen ($output)) or die("Could not write output\n");
+socket_close($spawn);
+socket_close($socket);
+?>
+```
+
+```php
+<?php
+//php client 
+$host    = "127.0.0.1";
+$port    = 25003;
+$message = "Hello Server";
+echo "Message To server:".$message ."\n";
+$socket = socket_create(AF_INET, SOCK_STREAM, 0) or die("Could not create socket\n");
+$result = socket_connect($socket, $host, $port) or die("Could not connect to server\n");  
+socket_write($socket, $message, strlen($message)) or die("Could not send data to server\n");
+$result = socket_read ($socket, 1024) or die("Could not read server response\n");
+echo "Reply From Server :".$result;
+socket_close($socket);
+?>
+```
+
 # python scoket  
 ```python
 #create socket server
