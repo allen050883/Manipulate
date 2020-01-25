@@ -34,7 +34,8 @@ echo "Reply From Server :".$result;
 socket_close($socket);
 ?>
 ```
-
+reference: https://stackoverflow.com/questions/22401079/how-to-test-php-socket-programming-in-localhost-ubuntu/22401126  
+  
 # python scoket  
 ```python
 #create socket server
