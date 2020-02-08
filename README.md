@@ -40,3 +40,24 @@ chmod 700 ~/.ssh
 ssh-keygen                             # generate public key and private key
 ssh-copy-id user@host_ip               # send ssh-key to host pc
 ```
+  
+## blacklist nouveau
+```bat
+sudo apt-get remove nvidia* && sudo apt autoremove
+sudo apt-get install dkms build-essential linux-headers-generic
+sudo nano /etc/modprobe.d/blacklist.conf
+```  
+add this in the .conf file  
+```bat
+blacklist nouveau
+blacklist lbm-nouveau
+options nouveau modeset=0
+alias nouveau off
+alias lbm-nouveau off
+```
+```bat
+echo options nouveau modeset=0 | sudo tee -a /etc/modprobe.d/nouveau-kms.conf
+sudo update-initramfs -u
+sudo reboot
+```  
+  
