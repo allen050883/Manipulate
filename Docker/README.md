@@ -11,17 +11,17 @@ docker tag acbf allen/python3-tensorflow-gpu
 2. sudo nvidia-docker run --rm -it -v /media/allen/:/workspace markliou/python3-tensorflow-gpu bash  
 (nvidia-docker run -it -v /media/allen:/workspace -v /media/dataset/ markliou/python3-tensorflow-gpu bash)  
 (sudo docker run -it --gpus all --rm -e DISPLAY=$DISPLAY -v $HOME/.Xauthority:/root/.Xauthority -v /media/allen:/workspace --network=host --name=VAETEST  markliou/python3-tensorflow-gpu bash)  
-
-### container state
-sudo docker ps -a
-sudo docker rm xxxx #remove container
-
-### image state
-sudo docker images
-sudo docker rmi xxxx #remove image
-
-### run the same docker
-docker exec -it [container_name] /bin/bash
+  
+### container state  
+sudo docker ps -a  
+sudo docker rm xxxx #remove container  
+  
+### image state  
+sudo docker images  
+sudo docker rmi xxxx #remove image  
+  
+### run the same docker  
+docker exec -it [container_name] /bin/bash  
   
  
  
