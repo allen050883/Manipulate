@@ -40,6 +40,15 @@ chmod 700 ~/.ssh
 ssh-keygen                             # generate public key and private key
 ssh-copy-id user@host_ip               # send ssh-key to host pc
 ```
+
+## xshell public key login  
+1. generate new public key rsa 2048  
+2. copy this key to the remote host ./ssh/authorized_keys  
+3. setting the public key login in xshell  
+
+## Winscp public key login  
+1. take remote public key to transfer into .ppk used in Windows by PuTTygen  
+2. setting the public key login in WinScp advance  
   
 ## blacklist nouveau
 ```bat
