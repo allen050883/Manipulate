@@ -10,8 +10,12 @@ docker tag acbf allen/python3-tensorflow-gpu
 1. mkdir ExtStorage  
 2.   
 ##### nvidia-docker
+```
 sudo nvidia-docker run --rm -it -v /media/allen/:/workspace markliou/python3-tensorflow-gpu bash  
+```
+```
 sudo nvidia-docker run -it -v /media/allen:/workspace -v /media/dataset/ markliou/python3-tensorflow-gpu bash  
+```
 ##### docker (gpus device)
 ```
 sudo docker run -it --gpus all --rm -e DISPLAY=$DISPLAY -v $HOME/.Xauthority:/root/.Xauthority -v /home/allen:/workspace --network=host --name=test  allentseng/python3-tensorflow-gpu bash  
