@@ -8,9 +8,14 @@ docker load -i python3-tensorflow-gpu.tar
 docker tag acbf allen/python3-tensorflow-gpu
 ### For someone using, create a file and load nvidia-docker(do not make the file in root state)  
 1. mkdir ExtStorage  
-2. sudo nvidia-docker run --rm -it -v /media/allen/:/workspace markliou/python3-tensorflow-gpu bash  
-(nvidia-docker run -it -v /media/allen:/workspace -v /media/dataset/ markliou/python3-tensorflow-gpu bash)  
-(sudo docker run -it --gpus all --rm -e DISPLAY=$DISPLAY -v $HOME/.Xauthority:/root/.Xauthority -v /media/allen:/workspace --network=host --name=VAETEST  markliou/python3-tensorflow-gpu bash)  
+2.   
+##### nvidia-docker
+sudo nvidia-docker run --rm -it -v /media/allen/:/workspace markliou/python3-tensorflow-gpu bash  
+sudo nvidia-docker run -it -v /media/allen:/workspace -v /media/dataset/ markliou/python3-tensorflow-gpu bash  
+##### docker (gpus device)
+sudo docker run -it --gpus all --rm -e DISPLAY=$DISPLAY -v $HOME/.Xauthority:/root/.Xauthority -v /home/allen:/workspace --network=host --name=test  allentseng/python3-tensorflow-gpu bash  
+sudo docker run -it --gpus device=1  --rm -e DISPLAY=$DISPLAY -v $HOME/.Xauthority:/root/.Xauthority -v /home/allen:/workspace --network=host --name=test allentseng/python3-tensorflow-gpu-2.0 bash
+  
   
 ### container state  
 sudo docker ps -a  
