@@ -33,6 +33,15 @@ root# reboot
 root# load factory-default
 root# set system root-authentication plain-text-password
 root# commit
+  
+root# request system configuration rescue delete
+root# start shell user root
+Password:
+root# cd /config
+root# rm -rf juniper.conf*
+root# cd /config/db/config
+root# rm -rf juniper.conf.*
+root# reboot
 ```
   
 power to set class or static mode    
