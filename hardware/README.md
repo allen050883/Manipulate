@@ -8,6 +8,7 @@ MSI AORUS X299X Master(不支援x系列 24 lane) + Intel i9-10920X(48 lane)
 5. linux要做raid，只用server版來做，不能用desktop版來做。server做完上desktop(apt-get install ubuntu-desktop)
 6. 裝完enthernet和wifi介面會壞掉，(ethernet修法https://forum.linuxconfig.org/t/wired-unmanaged-ubuntu-desktop-issue/1574/2)
 7. wifi是Intel出的，幾乎驅動都是給Win10版，並且型號需要自己猜，完全不推薦Intel Wifi 6  
+  
 結論:  
 1. 下次可以找raid卡來試玩，不然就是要請廠商確保板子可以做raid(SSD、CPU都要相容)  
 2. 可以換ASUS產品  
