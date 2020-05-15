@@ -14,7 +14,17 @@ sudo dhclient enp0s3
 4. set config in  /etc/netplan/01-netcfg.yaml
 ```
 ethernets:
-    enp3s0:
+    enp3s0
 dhcp4: yes
 ```
-#####   
+  
+##### encrypt  
+1. The "home" file will encryptted by checking the enthernet mac address.
+2. Use the specific file to encrypt it.  
+  
+##### cancel "Free Trial"  
+```
+sudo service locator stop
+sudo nano activator.ini #modify
+sudo service locator start
+```
