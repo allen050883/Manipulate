@@ -7,5 +7,6 @@
 2. (Optional) The better is given the NAT network.  
 3. test to turn on the Internet:
 #/bin/bash
+sudo apt-get
 
 #####   
