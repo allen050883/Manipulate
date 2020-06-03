@@ -25,6 +25,8 @@ dhcp4: yes
 ##### cancel "Free Trial"  
 ```
 sudo service locator stop
-sudo nano activator.ini #modify expiry_date and remaining
+sudo nano activator.ini 
+#modify expiry_date=  
+#modify remaining=0
 sudo service locator start
 ```
