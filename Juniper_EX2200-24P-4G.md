@@ -37,6 +37,61 @@ root# run show arp (show mac information)
 root# request system zeroize
 ```
   
+## Config file  
+```
+set poe interface all telemetries
+set poe interface ge-0/0/2 maximum-power 20
+set poe interface ge-0/0/3 maximum-power 20
+set poe interface ge-0/0/4 maximum-power 20
+set poe interface ge-0/0/5 maximum-power 20
+set poe interface ge-0/0/6 maximum-power 20
+set poe interface ge-0/0/7 maximum-power 20
+set poe interface ge-0/0/8 maximum-power 20
+set poe interface ge-0/0/9 maximum-power 20
+set poe interface ge-0/0/10 maximum-power 20
+set poe interface ge-0/0/11 maximum-power 20
+set poe interface ge-0/0/12 maximum-power 20
+set poe interface ge-0/0/13 maximum-power 20
+set poe interface ge-0/0/14 maximum-power 20
+set poe interface ge-0/0/15 maximum-power 20
+set poe interface ge-0/0/16 maximum-power 20
+set poe interface ge-0/0/17 maximum-power 20
+set poe interface ge-0/0/18 maximum-power 20
+set poe interface ge-0/0/19 maximum-power 20
+set poe interface ge-0/0/20 maximum-power 20
+set poe interface ge-0/0/21 maximum-power 20
+
+set interfaces vlan unit 0 family inet address 10.10.10.1/24
+set routing-options static route 0.0.0.0/0 next-hop 10.10.10.254
+
+set system host-name Jeno-TEST
+set vlans default l3-interface vlan.0
+set system root-authentication plain-text-password
+
+
+=============================================================================================
+
+
+
+set poe interface ge-0/0/x priority low => 設定POE優先權
+set poe interface ge-0/0/X priority high => 設定POE優先權
+
+set interfaces vlan unit 0 family inet address 10.10.10.1/24 ＝>設定vlan 0 的IP
+
+set system host-name Jeno-TEST ＝>設定hostname
+set vlans default l3-interface vlan.0 ＝>開啟L3的功能
+
+set routing-options static route 0.0.0.0/0 next-hop 10.10.10.254 =>設定預設砸道
+
+set system services ssh root-login allow =>開啟ssh 可用root登入
+set system services telnet =>開啟telnet
+set system services web-management http =>開啟Http
+set system services web-management https system-generated-certificate ＝>開啟Https
+
+set system root-authentication plain-text-password  ＝>設定root 密碼
+
+>request system zeroize  ＝>還原工廠預設值
+```
   
 # Other setting detail    
 ## power to set class or static mode  
