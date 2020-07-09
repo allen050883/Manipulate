@@ -64,13 +64,18 @@ set poe interface ge-0/0/21 maximum-power 20
 set interfaces vlan unit 0 family inet address 10.10.10.1/24
 set routing-options static route 0.0.0.0/0 next-hop 10.10.10.254
 
-set system host-name Jeno-TEST
+set system host-name thlight-TEST
 set vlans default l3-interface vlan.0
-set system root-authentication plain-text-password
-
+set system services ssh root-login allow 
+set system services telnet 
+set system services web-management http 
+set system services web-management https system-generated-certificate 
 
 =============================================================================================
 
+set system root-authentication plain-text-password
+
+=============================================================================================
 
 
 set poe interface ge-0/0/x priority low => 設定POE優先權
