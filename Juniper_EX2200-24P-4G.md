@@ -107,4 +107,7 @@ In class mode, on the other hand, the PoE controller does not allocate power to 
 ## Problem  
 1. 'dhcp' incompitable with interface assigned with address  
 ans: delete interfaces vlan.0 family inet dhcp  
+2. want to delete command  
+ans: change 'set' to 'delete', and dont forget to "run show configuration | display set"  
+  
   
