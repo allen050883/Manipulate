@@ -26,5 +26,5 @@ CREATE TABLE table_name LIKE table_name
 
 
 ## Creating Symlink to a directory  
-ln -s {source-dir-name} {symbolic-dir-name}
-ex. ln -s /a/b/dir/ dir
+ln -s {source-dir-name} {symbolic-dir-name}  
+ex. ln -s /a/b/dir/ dir  
