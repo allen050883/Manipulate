@@ -23,4 +23,8 @@ CREATE TABLE table_name LIKE table_name
 1. /etc/mysql/my.conf change bind_address=IP  
 2. add root user and set 10.0.0.% (% any number)  
 3. sudo service mysql restart  
-  
+
+
+## Creating Symlink to a directory  
+ln -s {source-dir-name} {symbolic-dir-name}
+ex. ln -s /a/b/dir/ dir
