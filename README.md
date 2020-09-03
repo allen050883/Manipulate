@@ -89,3 +89,10 @@ cmake .. -DNVML_RETRIEVE_HEADER_ONLINE=True
 make
 make install # You may need sufficient permission for that (root)
 ```
+  
+## Install chewing in Ubuntu 18.04
+1. sudo apt install ibus-chewing  
+2. log out or restart  
+3. Region & Language + More + Other and choose "Chinese(chewing)"  
+4. log out or restart   
+  
