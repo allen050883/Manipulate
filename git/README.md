@@ -1,4 +1,4 @@
-# Do these things first  
+## Do these things first  
 ### Install git on the Linux system  
 ```bash
 sudo apt install git-all    
@@ -22,7 +22,7 @@ To use server to be the git server, and engineers use ssh to git push to the git
 ```bash
 sudo mkdir /git/new_project.git
 sudo chmod -R 770 new_project.git
-sudo chgrp group_name new_project.git
+sudo chgrp -R group_name new_project.git
 git init --bare
 ```
 ### local  
