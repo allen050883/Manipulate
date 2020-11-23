@@ -22,6 +22,7 @@ To use server to be the git server, and engineers use ssh to git push to the git
 ```bash
 sudo mkdir /git/new_project.git
 sudo chgrp -R group_name new_project.git
+sudo chmod 771 -R new_project.git
 git init --bare
 ```
 ### local  
@@ -73,4 +74,6 @@ git branch -b new_branch
 ##### function    
 ```bash
 git branch -d <branch>  #remove branch
+git log --oneline
+git reset <id>
 ```
