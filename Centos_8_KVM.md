@@ -1,5 +1,5 @@
 # 用LX1430-M1為例子  
-符合的Centos版本如下
+符合的Centos版本如下  
 https://jp.fujitsu.com/platform/server/primergy/software/linux/products/distribution/pdf/lx1430m1-non-support-os.pdf#page=2  
 Centos 8 用server的x86_64安裝  
   
