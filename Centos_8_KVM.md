@@ -66,4 +66,8 @@ DNS1=192.168.2.254
 DOMAIN=sweet.home
 IPV6_DISABLED=yes
 ```
+And config for eno1 Ethernet:
+```
+vi /etc/sysconfig/network-scripts/ifcfg-bridge-slave-eno1
+```
 Reference:  https://www.cyberciti.biz/faq/how-to-install-kvm-on-centos-8-headless-server/  
