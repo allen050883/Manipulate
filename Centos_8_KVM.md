@@ -70,4 +70,56 @@ And config for eno1 Ethernet:
 ```
 vi /etc/sysconfig/network-scripts/ifcfg-bridge-slave-eno1
 ```
+eno1 config:
+```
+TYPE=Ethernet
+NAME=bridge-slave-eno1
+UUID=f43a8688-81f0-4860-91d4-f8f41efe2d10
+DEVICE=eno1
+ONBOOT=yes
+BRIDGE=br0
+```
+Restart the networking service (warning ssh command will disconnect, it is better to reboot the Linux box):
+```
+systemctl restart NetworkManager.service
+## OR ##
+nmcli con up br0
+nmcli connection delete eno1
+```
+Verify it with the nmcli command
+```
+nmcli device
+```
+Sample Output:
+```
+DEVICE      TYPE      STATE      CONNECTION        
+br0         bridge    connected  br0               
+virbr0      bridge    connected  virbr0            
+eno1        ethernet  connected  bridge-slave-eno1 
+lo          loopback  unmanaged  --                
+virbr0-nic  tun       unmanaged  --                
+wlp1s0      wifi      unmanaged  --  
+```
+  
+#### Step 5: Create your first virtual machine/guest VM  
+```
+cd /var/lib/libvirt/boot/
+wget https://mirrors.edge.kernel.org/centos/8/isos/x86_64/CentOS-8.1.1911-x86_64-boot.iso
+wget https://mirrors.edge.kernel.org/centos/8/isos/x86_64/CHECKSUM
+sha256sum --ignore-missing -c CHECKSUM
+```
+Create CentOS 8.x VM  
+In this following example, I creating CentOS 8.x VM with 1GB RAM, 1 CPU core, 1 nics and 20GB hard disk space, enter:
+```
+virt-install \
+--virt-type=kvm \
+--name centos8-vm \
+--memory 1024 \
+--vcpus=1 \
+--os-variant=rhel8.1 \
+--cdrom=/var/lib/libvirt/boot/CentOS-8.1.1911-x86_64-boot.iso \
+--network=bridge=br0,model=virtio \
+--graphics vnc \
+--disk path=/var/lib/libvirt/images/centos8.qcow2,size=20,bus=virtio,format=qcow2
+```
 Reference:  https://www.cyberciti.biz/faq/how-to-install-kvm-on-centos-8-headless-server/  
