@@ -58,3 +58,4 @@ sudo pkill -USR1 -n -x dd
 resource:  
 http://wiki.banana-pi.org/Banana_Pi_BPI-M64  
 http://wiki.lemaker.org/BananaPro/Pi:SD_card_installation  
+https://drive.google.com/drive/folders/0B_YnvHgh2rwjNExjUmlRNXdVNUE  
