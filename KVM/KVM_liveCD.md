@@ -1,5 +1,4 @@
-# USE ubuntu 18.04 to install the system  
-# Graphic for VNC port  
+# USE ubuntu 18.04 to install the system, VNC port  
 ```
 qemu-img create -f qcow2 XXX.qcow2 128G
 qemu-img info XXX.qcow2
