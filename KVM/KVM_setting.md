@@ -1,4 +1,13 @@
-## Install Ubuntu 18.04 LVM
+## Install Ubuntu 18.04 LVM  
+  
+## Let LV to be new disk
+```
+sudo lvcreate -l 100%FREE -n storage ubuntu-vg
+sudo fdisk -l  #show the disk list
+sudo mkfs.ext4 /dev/ubuntu-vg/storage  #format disk
+#and last mount
+```
+## Update system
 ```
 sudo apt-get update -y
 sudo apt-get upgrade -y
