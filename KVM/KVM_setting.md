@@ -5,7 +5,7 @@
 sudo lvcreate -l 100%FREE -n storage ubuntu-vg
 sudo fdisk -l  #show the disk list
 sudo mkfs.ext4 /dev/ubuntu-vg/storage  #format disk
-#and last mount
+#last  mount
 ```
 ## Update system
 ```
