@@ -3,6 +3,9 @@
 https://jp.fujitsu.com/platform/server/primergy/software/linux/products/distribution/pdf/lx1430m1-non-support-os.pdf#page=2  
 Centos 8 用server的x86_64安裝  
   
+記憶體插法  
+https://jp.fujitsu.com/platform/server/primergy/manual/peripdf/b7fy-a002-01.pdf  
+
 # 安裝KVM在Centos 8  
 #### Step 1: Installing kvm  
 ```
