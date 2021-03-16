@@ -20,7 +20,7 @@ CREATE TABLE table_name LIKE table_name
   
   
 ## python connect database method  
-1. /etc/mysql/my.conf change bind_address=IP  
+1. /etc/mysql/my.cnf change bind_address=IP  
 2. add root user and set 10.0.0.% (% any number)  
 3. sudo service mysql restart  
 
