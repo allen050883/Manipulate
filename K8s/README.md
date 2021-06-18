@@ -40,7 +40,7 @@ c. 驗證
   
   
   
-   
+  
   
 ## 安裝 CRI-O for K8s  
 CRI-O 是設計給 k8s 的 Container Runtime Interface，k8s 當然也可以使用 Docker 作為 Container Runtime，但是我們這邊遵循選擇 CRI-O 為主  
@@ -94,7 +94,34 @@ k8s 預設不希望我們系統有 swap 存在，所以
 ```
 sudo swapoff -a
 ```
-
+  
+  
+  
+  
+  
+## 設定服務自動重啟  
+這邊皆以root執行  
+  
+a. 給 kubelet 預設的設定 ( /etc/default/kubelet )  
 ```
-
+cat > /etc/default/kubelet <<EOF
+KUBELET_EXTRA_ARGS=--feature-gates="AllAlpha=false,RunAsGroup=true" --container-runtime=remote --cgroup-driver=systemd --container-runtime-endpoint='unix:///var/run/crio/crio.sock' --runtime-request-timeout=5m
+EOF
 ```
+b. 確保所有的服務在重開機後會自己起來 (k8s reboot 後依然有效)  
+```
+systemctl enable kubelet
+systemctl enable crio
+```
+  
+  
+  
+  
+  
+## k8s Master Node 啟動
+```
+kubeadm init  
+```
+這裡如果遇到坑, 請參考  
+https://tree.rocks/kubernetes-with-multi-server-node-setup-on-ubuntu-server-280066e6b106  
+
