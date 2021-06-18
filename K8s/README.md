@@ -1,4 +1,4 @@
-# 安裝環境：  
+# 安裝環境  
 Ubuntu 18.04桌面板的virtual box安裝master跟node
 k8s相關套件為1.21版  
 備：以下命令無法執行時, 請改用root為使用者
