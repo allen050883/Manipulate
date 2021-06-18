@@ -145,3 +145,33 @@ sudo chown $(id -u):$(id -g) $HOME/.kube/configd
 kubectl get nodes
 ```
 ![alt_text](https://github.com/allen050883/Manipulate/blob/master/K8s/read_img/kubectl_nodes.png)  
+  
+  
+  
+  
+  
+##  執行一個 deployment 範例
+```
+kubectl create deployment hello-node --image=k8s.gcr.io/echoserver:1.4
+```
+在輸入 kubectl get pods 觀察狀態，會發現一直 pending  
+透過 kubectl describe 指令觀察該 pods 會發現類似錯誤訊息 :  
+( 主要為 1 node(s) had taint {node-role.kubernetes.io/master: }, that the pod didn’t tolerate. )  
+```
+QoS Class:       BestEffort
+Node-Selectors:  <none>
+Tolerations:     node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:
+Type     Reason            Age                From               Message
+----     ------            ----               ----               -------
+Warning  FailedScheduling  31s (x2 over 31s)  default-scheduler  0/1 nodes are available: 1 node(s) had taint {node-role.kubernetes.io/master: }, that the pod didn't tolerate.
+```
+
+這時候需要輸入  
+```
+kubectl taint nodes --all node-role.kubernetes.io/master-
+```
+再觀察一次 pod 狀況 (kubectl get pods)  
+![alt_text](https://github.com/allen050883/Manipulate/blob/master/K8s/read_img/kubectl_pods.png)  
+這樣就運行成功了  
