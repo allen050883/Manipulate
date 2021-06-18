@@ -123,7 +123,9 @@ systemctl enable crio
 kubeadm init  
 ```
 這裡如果遇到坑, 請參考  
-https://tree.rocks/kubernetes-with-multi-server-node-setup-on-ubuntu-server-280066e6b106  
+https://tree.rocks/kubernetes-with-multi-server-node-setup-on-ubuntu-server-280066e6b106   
+成功畫面如下  
+![alt text](https://github.com/allen050883/Manipulate/blob/master/K8s/read_img/kubeadm_init_finish.png)  
 請保存好這段，這是其他 k8s 節點要加入使用的  
 ```
 kubeadm join 192.168.99.61:6443 --token xxxxxx     --discovery-token-ca-cert-hash sha256:xxxx
@@ -133,4 +135,13 @@ kubeadm join 192.168.99.61:6443 --token xxxxxx     --discovery-token-ca-cert-has
   
 ## K8S Master Node 驗證  
 從上個步驟我們看到類似的提示  
-![alt text](https://github.com/allen050883/Manipulate/blob/master/K8s/read_img/kubeadm_init_finish.png)
+```
+mkdir -p $HOME/.kube
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+sudo chown $(id -u):$(id -g) $HOME/.kube/configd
+```
+運行後可以使用自己慣用的 user (非root)來執行，然後這個 user 就可以使用 kubectl 指令了
+```
+kubectl get nodes
+```
+![alt_text](https://github.com/allen050883/Manipulate/blob/master/K8s/read_img/kubectl_nodes.png)  
