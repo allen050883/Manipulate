@@ -25,7 +25,9 @@ sudo sysctl --system
 b. 安裝 kubeadm / kubelet  
 ```
 sudo apt-get update && sudo apt-get install -y apt-transport-https curl
+
 curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+
 cat <<EOF | sudo tee /etc/apt/sources.list.d/kubernetes.list
 deb https://apt.kubernetes.io/ kubernetes-xenial main
 EOF
@@ -88,6 +90,9 @@ e. 關閉 swap
 k8s 預設不希望我們系統有 swap 存在，所以
 編輯 /etc/fstab ( 執行 sudo nano /etc/fstab )，將 swap 註解掉
 ```
+sudo nano /etc/fstab
+```
+```
 # /swap.img     none    swap    sw      0       0
 ```
 然後執行 Ubuntu 關閉 Swap 指令  
@@ -138,7 +143,7 @@ kubeadm join 192.168.99.61:6443 --token xxxxxx     --discovery-token-ca-cert-has
 ```
 mkdir -p $HOME/.kube
 sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
-sudo chown $(id -u):$(id -g) $HOME/.kube/configd
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
 ```
 運行後可以使用自己慣用的 user (非root)來執行，然後這個 user 就可以使用 kubectl 指令了
 ```
