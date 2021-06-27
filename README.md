@@ -95,4 +95,23 @@ make install # You may need sufficient permission for that (root)
 2. log out or restart  
 3. Region & Language + More + Other and choose "Chinese(chewing)"  
 4. log out or restart   
+    
   
+## docker without root  
+```
+sudo groupadd docker
+sudo usermod -aG docker $USER
+newgrp docker 
+docker run hello-world
+```
+
+## Install forticlient  
+```
+wget -O - https://repo.fortinet.com/repo/6.4/ubuntu/DEB-GPG-KEY | sudo apt-key add -
+
+echo"deb [arch=amd64] https://repo.fortinet.com/repo/6.4/ubuntu/ /bionic multiverse" | sudo tee /etc/apt/sources.list.d/docker.list
+
+sudo apt-get update
+
+sudo apt install forticlient
+```
