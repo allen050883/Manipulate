@@ -102,7 +102,15 @@ make install # You may need sufficient permission for that (root)
 sudo groupadd docker
 sudo usermod -aG docker $USER
 newgrp docker 
-docker run hello-world
+docker run hello-world #test
+```
+  
+  
+## microk8s without root  
+```
+sudo usermod -a -G microk8s allen
+sudo chown -f -R allen ~/.kube
+newgrp microk8s
 ```
 
 ## Install forticlient  
