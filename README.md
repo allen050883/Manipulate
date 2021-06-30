@@ -108,8 +108,8 @@ docker run hello-world #test
   
 ## microk8s without root  
 ```
-sudo usermod -a -G microk8s allen
-sudo chown -f -R allen ~/.kube
+sudo usermod -a -G microk8s $USER
+sudo chown -f -R $USER ~/.kube
 newgrp microk8s
 ```
 
