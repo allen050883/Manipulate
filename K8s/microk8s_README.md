@@ -8,5 +8,5 @@ sudo snap install microk8s --classic --channels=1.21
 ```
 
 ## 問題
-Q: microk8s status出現 "microk8s is not running. Use microk8s inspect for a deeper inspection."
-A: 重新整個關掉vm (sudo poweroff), 再打開
+Q: microk8s status出現 "microk8s is not running. Use microk8s inspect for a deeper inspection."  
+A: 重新整個關掉vm (sudo poweroff), 再打開  
