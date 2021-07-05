@@ -4,7 +4,7 @@ Ubuntu 18.04 server板的virtual box安裝master跟node microk8s相關套件為1
   
 ```
 sudo apt-get update && sudo apt-get upgrade -y
-sudo snap install microk8s --classic --channels=1.21
+sudo snap install microk8s --classic --channel=1.21
 ```
 
 ## 問題
