@@ -183,15 +183,15 @@ I do not know why need use `pip install docker-py`, but install first
   
     - name: build docker image
       docker_image:
-        name: newtaipei
-        path: /root/newtaipei/
+        name: example
+        path: /root/example/
         state: present
         
     - name: run container
       docker_container:
-        name:  new
-        image: newtaipei
+        name:  ex
+        image: example
         volumes: 
-          - /root/newtaipei/:/workspace
-        command: python trash.py
+          - /root/example/:/example
+        command: python example.py
 ```
