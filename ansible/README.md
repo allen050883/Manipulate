@@ -38,9 +38,11 @@ ssh-copy-id def@1.2.3.5
 Second, edit `/etc/ansible/hosts` to set parameter for when ansible controlling as user, password, python version or something else.  
 reference: https://docs.ansible.com/ansible/latest/user_guide/intro_inventory.html  
 In this `hosts`, `[local]` is the group name, the following `[test]` you can change by yourself  
+  
 `ansible_python_interpreter=/usr/bin/python3` set python3 as the default python version to run ansible basically  
 `ansible_user="abc"` set user name to login and use  
 `ansible_become_pass="123"`  user password  
+  
 ```
 sudo su -c '/bin/echo -e "[local]\nlocalhost ansible_connection=local ansible_python_interpreter=/usr/bin/python3 ansible_become_pass="123"" >> /etc/ansible/hosts'
 sudo su -c '/bin/echo -e "[test]" >> /etc/ansible/hosts'
