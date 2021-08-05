@@ -22,14 +22,14 @@ First, generate `ssh-key` and send public key to remote server, you can use `ssh
 ```
 ssh-key
 ```
-the easy script
+the easy script  
 ```
 #!/bin/bash
 for ip in `cat /home/list_of_servers`; do
     ssh-copy-id -i ~/.ssh/id_rsa.pub $ip
 done
 ```
-or this way
+or this way  
 ```
 ssh-key
 ssh-copy-id abc@1.2.3.4
