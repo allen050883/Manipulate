@@ -111,6 +111,7 @@ Therefore, when `become` is true, notice the default user is 'root' and director
         state: present
 
     - name: Add Docker Repository
+      become: true
       apt_repository:
         repo: deb https://download.docker.com/linux/ubuntu bionic stable
         state: present
