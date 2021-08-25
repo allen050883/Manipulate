@@ -39,9 +39,15 @@ ip-172-31-20-243   Ready    <none>   53s   v1.15.3
 
 
 # Reference
-https://microk8s.io/docs/clustering. 
-
-
+https://microk8s.io/docs/clustering  
+  
+  
 ## 問題
 Q: microk8s status出現 "microk8s is not running. Use microk8s inspect for a deeper inspection."  
 A: 重新整個關掉vm (sudo poweroff)，再打開有機會修好  
+  
+Q: add node到某一台後，microk8s status等任何指令，皆會出現This MicroK8s deployment is acting as a node in a cluster. Please use the microk8s kubectl on the master.  
+A: microk8s leave可以恢復  
+  
+Q: microk8s kubectl get no會得到本機not ready的情況，除此之外在leave之後，其他台在get no之後還是有該狀態的產生，因此狀態上非常不明確  
+A: 未知 
