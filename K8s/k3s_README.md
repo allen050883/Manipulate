@@ -13,3 +13,9 @@ sudo tee -a /etc/hosts<<EOF
 EOF
 ```
   
+# 安裝k3s
+先在Master安裝
+```
+curl -sfL https://get.k3s.io | sh -
+```
+
