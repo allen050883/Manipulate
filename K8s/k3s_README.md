@@ -54,3 +54,30 @@ systemctl status k3s
  Main PID: 1657 (k3s-server)
     Tasks: 85
 ```
+  
+k3s.yaml設定值可在這邊看到
+```
+sudo cat /etc/rancher/k3s/k3s.yaml
+```
+```
+apiVersion: v1
+clusters:
+- cluster:
+    certificate-authority-data: XXXXX
+    server: https://127.0.0.1:6443
+  name: default
+contexts:
+- context:
+    cluster: default
+    user: default
+  name: default
+current-context: default
+kind: Config
+preferences: {}
+users:
+- name: default
+  user:
+    client-certificate-data: XXXXX
+    client-key-data: XXXXX
+
+```
