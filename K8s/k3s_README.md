@@ -7,9 +7,9 @@ k3s_3
 在/etc/hosts增加連線  
 ```
 sudo tee -a /etc/hosts<<EOF
-1.2.3.4 k3s_1
-1.2.3.5 k3s_2
-1.2.3.6 k3s_3
+1.2.3.4 master
+1.2.3.5 worker1
+1.2.3.6 worker2
 EOF
 ```
   
