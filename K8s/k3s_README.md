@@ -14,7 +14,7 @@ EOF
 ```
   
 # 安裝k3s
-先在Master安裝
+## 在Master安裝
 ```
 curl -sfL https://get.k3s.io | sh -
 ```
@@ -79,5 +79,13 @@ users:
   user:
     client-certificate-data: XXXXX
     client-key-data: XXXXX
-
+```
+  
+## 在Worker安裝  
+先在master中找到建好的token
+```
+sudo cat /var/lib/rancher/k3s/server/node-token
+```
+```
+K105dXXXXX::server:e0fc8XXXXX
 ```
