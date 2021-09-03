@@ -1,15 +1,17 @@
 # k3s安裝方法  
 三台主機名稱  
-k3s_1  
-k3s_2  
-k3s_3  
-
+master  
+worker1  
+worker2  
+worker3  
+  
 在/etc/hosts增加連線  
 ```
 sudo tee -a /etc/hosts<<EOF
 1.2.3.4 master
 1.2.3.5 worker1
 1.2.3.6 worker2
+1.2.3.7 worker3
 EOF
 ```
   
@@ -89,7 +91,7 @@ sudo cat /var/lib/rancher/k3s/server/node-token
 ```
 K105dXXXXX::server:e0fc8XXXXX
 ```
-在worker準備安裝前，先將master的IP跟token輸入成參數
+在每一台worker準備安裝前，先將master的IP跟token輸入成參數
 ```
 k3s_url="https://1.2.3.4:6443"
 k3s_token="K105dXXXXX::server:e0fc8XXXXX"
