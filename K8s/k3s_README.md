@@ -89,3 +89,43 @@ sudo cat /var/lib/rancher/k3s/server/node-token
 ```
 K105dXXXXX::server:e0fc8XXXXX
 ```
+在worker準備安裝前，先將master的IP跟token輸入成參數
+```
+k3s_url="https://1.2.3.4:6443"
+k3s_token="K105dXXXXX::server:e0fc8XXXXX"
+```
+開始安裝  
+```
+curl -sfL https://get.k3s.io | K3S_URL=${k3s_url} K3S_TOKEN=${k3s_token} sh -
+```
+```
+[INFO]  Finding release for channel stable
+[INFO]  Using v1.21.4+k3s1 as release
+[INFO]  Downloading hash https://github.com/k3s-io/k3s/releases/download/v1.21.4+k3s1/sha256sum-amd64.txt
+[INFO]  Downloading binary https://github.com/k3s-io/k3s/releases/download/v1.21.4+k3s1/k3s
+[INFO]  Verifying binary download
+[INFO]  Installing k3s to /usr/local/bin/k3s
+[INFO]  Creating /usr/local/bin/kubectl symlink to k3s
+[INFO]  Creating /usr/local/bin/crictl symlink to k3s
+[INFO]  Creating /usr/local/bin/ctr symlink to k3s
+[INFO]  Creating killall script /usr/local/bin/k3s-killall.sh
+[INFO]  Creating uninstall script /usr/local/bin/k3s-agent-uninstall.sh
+[INFO]  env: Creating environment file /etc/systemd/system/k3s-agent.service.env
+[INFO]  systemd: Creating service file /etc/systemd/system/k3s-agent.service
+[INFO]  systemd: Enabling k3s-agent unit
+Created symlink /etc/systemd/system/multi-user.target.wants/k3s-agent.service → /etc/systemd/system/k3s-agent.service.
+[INFO]  systemd: Starting k3s-agent
+```
+到此為止，連clustering都已經建置完成  
+接下來在master檢查nodes  
+```
+sudo kubectl get nodes
+```
+結果如下
+```
+NAME      STATUS   ROLES                  AGE     VERSION
+worker3   Ready    <none>                 7m50s   v1.21.4+k3s1
+master    Ready    control-plane,master   40m     v1.21.4+k3s1
+worker2   Ready    <none>                 7m25s   v1.21.4+k3s1
+worker1   Ready    <none>                 11m     v1.21.4+k3s1
+```
