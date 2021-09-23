@@ -69,7 +69,7 @@ sudo docker rmi xxxx #remove image
 ### execute container  
 ```
 sudo docker exec -it [container_name] /bin/bash  
-``  
+```  
  
  
   
