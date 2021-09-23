@@ -22,6 +22,7 @@ sudo docker run -it --gpus all --rm -e DISPLAY=$DISPLAY -v $HOME/.Xauthority:/ro
 ```
   
   
+
   
 ### Condtion  
 ##### Use public image and run the container. Finish container, and try to make it in image and try sace in tar file  
