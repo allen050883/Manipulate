@@ -19,13 +19,13 @@ sudo nvidia-docker run -it -v /media/allen:/workspace -v /media/dataset/ marklio
 ##### docker (gpus device)
 ```
 sudo docker run -it --gpus all --rm -e DISPLAY=$DISPLAY -v $HOME/.Xauthority:/root/.Xauthority -v /home/allen:/workspace --network=host --name=test  allentseng/python3-tensorflow-gpu bash  
-```
+```  
   
   
-
+  
   
 ### Condtion  
-##### Use public image and run the container. Finish container, and try to make it in image and try sace in tar file  
+##### Use public image and run the container. Finish container, and try to make it in image and save in tar file  
 ```
 $ docker ps -a
 CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                NAMES
