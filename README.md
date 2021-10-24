@@ -123,3 +123,14 @@ sudo apt-get update
 
 sudo apt install forticlient
 ```
+  
+## Close laptop screen but not suspend
+```
+sudo nano /etc/systemd/logind.conf
+
+# Find this, and change
+HandleLidSwitch=ignore
+  
+# logout and login again  
+sudo systemctl restart systemd-logind 
+```
