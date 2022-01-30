@@ -34,13 +34,31 @@ sudo rm -rf /home_backup
 ```  
   
 ## ssh auto login  
+### Ubuntu  
 ```bat
 mkdir -p ~/.ssh  
 chmod 700 ~/.ssh  
 ssh-keygen                             # generate public key and private key
 ssh-copy-id user@host_ip               # send ssh-key to host pc
 ```
-
+### Windows Powershell  
+First run, 
+```
+function ssh-copy-id([string]$userAtMachine){   
+    $publicKey = "$ENV:USERPROFILE" + "/.ssh/id_rsa.pub"
+    if (!(Test-Path "$publicKey")){
+        Write-Error "ERROR: failed to open ID file '$publicKey': No such file"            
+    }
+    else {
+        & cat "$publicKey" | ssh $userAtMachine "umask 077; test -d .ssh || mkdir .ssh ; cat >> .ssh/authorized_keys || exit 1"      
+    }
+}
+```
+then, 
+```
+ssh-copy-id user@host_ip
+```
+  
 ## xshell public key login  
 1. generate new public key rsa 2048  
 2. copy this key to the remote host ./ssh/authorized_keys  
