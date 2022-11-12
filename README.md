@@ -156,4 +156,5 @@ sudo systemctl restart systemd-logind
 # tmux new name  
 ```
 tmux new -s python
+tmux rename-session -t python python_ecpay
 ```
