@@ -152,3 +152,8 @@ HandleLidSwitch=ignore
 # logout and login again  
 sudo systemctl restart systemd-logind 
 ```
+  
+# tmux new name  
+```
+tmux new -s python
+```
