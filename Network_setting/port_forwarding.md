@@ -33,7 +33,7 @@
 ## 注意  
 以上方法需要再登入的時候將密碼輸入的直接鎖住，可以先利用ssh-copy-id存取金鑰  
 ```
-sudo nano /etc/ssh/sshd_config
+sudo vi /etc/ssh/sshd_config
 將
 PasswordAuthentication no
 
