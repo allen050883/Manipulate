@@ -38,9 +38,7 @@ sudo vi /etc/ssh/sshd_config
 PasswordAuthentication no
 
 重新啟動網路
-sudo netplan apply
-sudo systemctl restart NetworkManager.service
-sudo service network-manager restart
+service sshd restart
 ```
   
   
