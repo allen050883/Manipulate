@@ -31,21 +31,11 @@ $ docker ps -a
 CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                NAMES
 df2caf9283e8        nginx               "nginx -g 'daemon of…"   35 seconds ago      Up 34 seconds       0.0.0.0:80->80/tcp   vigorous_jang
 ```
-Export the container in tar file  
+Use commit to get new image
 ```
-$ docker export df2c > nginx.tar
+docker commit <container_id_or_name> my-qdrant:updated
 ```
-Make container tar file import image  
-```
-$ docker import - mynginx < nginx.tar
-sha256:aaaed50d250a671042e8dc383c6e05012e245f5eaf555d10c40be63f6028ee7b
-```
-```
-$ docker images
-REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
-mynginx             latest              aaaed50d250a        25 seconds ago      107MB
-nginx               latest              568c4670fa80        2 weeks ago         109MB
-```
+  
 Save new image and remove container tar file  
 ```
 $ docker save -o mynginx.tar mynginx
