@@ -40,7 +40,16 @@ PasswordAuthentication no
 重新啟動網路
 service sshd restart
 ```
-  
+ubuntu 24.04版本  
+```
+sudo vi /etc/ssh/sshd_config.d/50-cloud-init.conf
+
+PasswordAuthentication no
+ChallengeResponseAuthentication no
+
+重新啟動網路
+sudo systemctl reload ssh
+```
   
   
 ## 重要知識補充  
